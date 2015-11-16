@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="http://gulpjs.com">
-    <img height="150" width="150" src="https://raw.githubusercontent.com/stojanovic/molekul/master/molekul.png">
-  </a>
+  <img height="120" width="120" src="https://raw.githubusercontent.com/stojanovic/molekul/master/molekul.png">
 </p>
 
 # Molekul
