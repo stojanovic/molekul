@@ -1,0 +1,7 @@
+{
+  "slack": {
+    "appClientId": "{{yourSlackAppID}}",
+    "appSecret": "{{yourSlackAppSecret}}",
+    "redirectUri": "{{appRedirectUriYouSetInTheApp}}"
+  }
+}
