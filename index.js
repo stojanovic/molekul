@@ -6,7 +6,7 @@ const Hapi   = require('hapi'),
       config = require('./config/config.json')
 
 let server = new Hapi.Server()
-server.connection({ port: process.env.PORT || 3000 })
+server.connection({ port: process.env.PORT || 4747 })
 
 // console.log(config.slack)
 
@@ -24,11 +24,11 @@ server.route({
   handler(req, reply) {
     let query = {
       client_id:    config.slack.appClientId,
-      scope:        'channels:read chat:write:bot',
+      scope:        'team:read channels:read chat:write:bot',
       redirect_uri: config.slack.redirectUri
     }
     let authUrl = `https://slack.com/oauth/authorize?${qs.stringify(query)}`
-    
+
     reply('Redirecting to Slack').redirect(authUrl)
   }
 })
@@ -45,7 +45,7 @@ server.route({
         redirect_uri:  config.slack.redirectUri
       }
       let oauthUrl = `https://slack.com/api/oauth.access?${qs.stringify(params)}`
-      
+
       rp(oauthUrl)
         .then(response => reply(response))
     } else {
